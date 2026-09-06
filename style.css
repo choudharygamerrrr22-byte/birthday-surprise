@@ -1165,3 +1165,160 @@ font-size:16px;
 }
 
 }
+
+/* ========================= */
+/* MOBILE FIX (0px - 768px) */
+/* ========================= */
+
+@media screen and (max-width:768px){
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+/* Loading Card */
+
+.glass{
+    width:92%;
+    max-width:340px;
+    padding:25px 18px;
+    border-radius:22px;
+}
+
+.gift{
+    font-size:65px;
+}
+
+.glass h1{
+    font-size:32px;
+    line-height:1.2;
+}
+
+#typing{
+    font-size:16px;
+}
+
+.loading{
+    width:100%;
+}
+
+#percent{
+    font-size:24px;
+}
+
+/* Password */
+
+.lockBox{
+    width:92%;
+    max-width:340px;
+    padding:25px 20px;
+}
+
+.lockBox h2{
+    font-size:28px;
+}
+
+#passInput{
+    width:100%;
+    font-size:24px;
+}
+
+#unlockBtn{
+    width:100%;
+    font-size:18px;
+}
+
+/* Welcome */
+
+.welcome-card{
+    width:92%;
+    max-width:340px;
+    padding:25px;
+}
+
+.welcome-card h1{
+    font-size:32px;
+}
+
+.welcome-card p{
+    font-size:16px;
+}
+
+#startBtn{
+    width:100%;
+}
+
+/* Warning */
+
+.warning-box{
+    width:92%;
+    max-width:340px;
+    padding:25px;
+}
+
+.warning-box h2{
+    font-size:32px;
+}
+
+.warning-box p{
+    font-size:18px;
+}
+
+/* Quiz */
+
+.quiz-card{
+    width:92%;
+    max-width:350px;
+    padding:25px;
+}
+
+#questionText{
+    font-size:24px;
+}
+
+.option{
+    width:100%;
+    font-size:16px;
+}
+
+/* Final */
+
+.final-card{
+    width:92%;
+    max-width:340px;
+    padding:25px;
+}
+
+.final-card h1{
+    font-size:32px;
+}
+
+.final-card h3{
+    font-size:18px;
+}
+
+/* Birthday */
+
+.birthday-card{
+    width:92%;
+    padding:20px;
+}
+
+.birthday-small{
+    font-size:20px;
+}
+
+.birthday-name{
+    font-size:38px;
+}
+
+.birthday-message{
+    font-size:16px;
+}
+
+}
