@@ -36,23 +36,24 @@ animation:bg 12s infinite ease;
 }
 .glass{
 
-width:min(90vw,380px);
+    width:90%;
+    max-width:360px;
 
-padding:35px 25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
 
-border-radius:28px;
+    border-radius:25px;
 
-backdrop-filter:blur(20px);
+    padding:35px 25px;
 
-background:rgba(255,255,255,.08);
+    text-align:center;
 
-border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-box-shadow:0 20px 60px rgba(0,140,255,.25);
-
-text-align:center;
-
-z-index:2;
+    gap:18px;
 
 }
 
@@ -853,6 +854,313 @@ to{
 opacity:1;
 
 transform:translateY(0);
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    #birthdayTitle{
+        font-size:28px;
+    }
+
+    #birthdayTitle .line3{
+        font-size:36px;
+    }
+
+}
+
+/* Warning Screen */
+
+#warningScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+background:#050816;
+
+z-index:99999;
+
+padding:20px;
+
+}
+
+.warning-box{
+
+max-width:360px;
+
+width:100%;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+color:white;
+
+animation:pop .5s ease;
+
+}
+
+.warning-box h1{
+
+font-size:55px;
+
+margin-bottom:10px;
+
+}
+
+.warning-box h2{
+
+color:#ff4d6d;
+
+margin-bottom:20px;
+
+}
+
+.warning-box p{
+
+font-size:20px;
+
+margin:12px 0;
+
+}
+
+.warning-box h3{
+
+margin-top:30px;
+
+color:#66d9ff;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+/* Password Screen */
+
+#lockScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(180deg,#050816,#111b45,#050816);
+
+z-index:9999999;
+
+}
+
+.lockBox{
+
+width:90%;
+max-width:340px;
+
+padding:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:25px;
+
+}
+
+.lockBox h2{
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.lockBox p{
+
+color:#ddd;
+
+}
+
+#passInput{
+
+width:100%;
+
+padding:18px;
+
+margin-top:25px;
+
+font-size:26px;
+
+text-align:center;
+
+letter-spacing:10px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.15);
+
+color:white;
+
+}
+
+#unlockBtn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+#wrongPass{
+
+margin-top:15px;
+
+color:#ff6b81;
+
+font-size:15px;
+
+}
+
+.birthday-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+.birthday-small{
+
+    font-size:28px;
+
+    color:#ff9cc9;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin:0;
+
+}
+
+.birthday-name{
+
+    font-size:52px;
+
+    color:#ff5ea8;
+
+    margin:8px 0;
+
+    font-weight:700;
+
+}
+
+.birthday-message{
+
+    margin-top:18px;
+
+    max-width:300px;
+
+    color:white;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+@media(max-width:768px){
+
+.birthday-small{
+
+font-size:22px;
+
+}
+
+.birthday-name{
+
+font-size:38px;
+
+}
+
+.birthday-message{
+
+font-size:16px;
 
 }
 
