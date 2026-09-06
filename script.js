@@ -1,63 +1,74 @@
-const text =
-"Preparing something unforgettable just for you...";
+const text = "Preparing something unforgettable just for you...";
 
 let i = 0;
 
 function type(){
 
-if(i < text.length){
+    if(i < text.length){
 
-document.getElementById("typing").innerHTML += text.charAt(i);
+        document.getElementById("typing").innerHTML += text.charAt(i);
 
-i++;
+        i++;
 
-setTimeout(type,45);
+        setTimeout(type,45);
 
-}
-
-}
-
-type();
-
-let progress = 0;
-
-let bar = document.getElementById("progress");
-
-let percent = document.getElementById("percent");
-
-let load = setInterval(()=>{
-
-progress++;
-
-bar.style.width = progress + "%";
-
-percent.innerHTML = progress + "%";
-
-if(progress>=100){
-
-clearInterval(load);
-
-setTimeout(()=>{
-
-document.querySelector(".glass").style.display="none";
-
-const welcome=document.getElementById("welcomeScreen");
-
-welcome.classList.remove("hidden");
-
-setTimeout(()=>{
-
-welcome.classList.add("show");
-
-},100);
-
-},800);
+    }
 
 }
 
+function startLoading(){
 
-},45);
+    // Reset loading text
+    document.getElementById("typing").innerHTML = "";
 
+    // Restart typing animation
+    i = 0;
+    type();
+
+    // Reset progress
+    let progress = 0;
+
+    let bar = document.getElementById("progress");
+    let percent = document.getElementById("percent");
+
+    bar.style.width = "0%";
+    percent.innerHTML = "0%";
+
+    // Start loading
+    let load = setInterval(()=>{
+
+        progress++;
+
+        bar.style.width = progress + "%";
+        percent.innerHTML = progress + "%";
+
+        if(progress >= 100){
+
+            clearInterval(load);
+
+            setTimeout(()=>{
+
+                // Hide loading screen
+                document.querySelector(".glass").style.display = "none";
+
+                // Show welcome screen
+                const welcome = document.getElementById("welcomeScreen");
+
+                welcome.classList.remove("hidden");
+
+                setTimeout(()=>{
+
+                    welcome.classList.add("show");
+
+                },100);
+
+            },800);
+
+        }
+
+    },45);
+
+}
 for(let i=0;i<120;i++){
 
 let star=document.createElement("div");
@@ -82,9 +93,17 @@ if(e.target.id==="startBtn"){
 
 document.getElementById("welcomeScreen").style.display="none";
 
+document.getElementById("warningScreen").style.display="flex";
+
+setTimeout(function(){
+
+document.getElementById("warningScreen").style.display="none";
+
 document.getElementById("quizScreen").style.display="flex";
 
 loadQuestion();
+
+},3000);
 
 }
 
@@ -258,3 +277,28 @@ screen.appendChild(balloon);
 }
 
 });
+
+const PASSWORD="1209"; // Change this
+
+document.getElementById("unlockBtn").onclick=function(){
+
+const entered=document.getElementById("passInput").value;
+
+if(entered===PASSWORD){
+
+document.getElementById("lockScreen").style.display="none";
+
+document.querySelector(".glass").style.display="flex";
+
+startLoading();
+
+}
+else{
+
+document.getElementById("wrongPass").innerHTML="❌ Wrong Password";
+
+document.getElementById("passInput").value="";
+
+}
+
+};
