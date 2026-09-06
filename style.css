@@ -5,6 +5,11 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
 
+/* Keep the welcome layer out of the viewport until loading reveals it. */
+#welcomeScreen.hidden{
+display:none;
+}
+
 body{
 
 height:100vh;
@@ -48,10 +53,11 @@ animation:bg 12s infinite ease;
 
     text-align:center;
 
-    display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    /* JavaScript reveals the loading screen after the password is accepted. */
+    display:none;
 
     gap:18px;
 
